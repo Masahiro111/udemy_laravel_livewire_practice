@@ -8,7 +8,6 @@ class Counter extends Component
 {
     public $counter = 0;
     public $name = 'Subaru';
-    public $mierukana = 'あぴあー';
 
     public function increment(int $num = 1)
     {
@@ -18,6 +17,48 @@ class Counter extends Component
             $this->counter = 1;
         }
     }
+
+    // public function boot()
+    // {
+    //     dump('boot');
+    // }
+
+    // public function booted()
+    // {
+    //     dump('booted');
+    // }
+
+    // public function mount()
+    // {
+    //     $this->counter = random_int(1, 100);
+
+    //     dump('mount');
+    // }
+
+    // public function hydrate()
+    // {
+    //     dump('hydrate');
+    // }
+
+    // public function deHydrate()
+    // {
+    //     dump('deHydrate');
+    // }
+
+    // public function updating($name, $value)
+    // {
+    //     dump('updating - ' . $name . ' -> ' . $value);
+    // }
+
+    // public function updatingName($value)
+    // {
+    //     dump('updatingCounter - ' . $value);
+    // }
+
+    // public function updated($name, $value)
+    // {
+    //     dump('updated - ' . $name . '->' . $value);
+    // }
 
     public function render()
     {
