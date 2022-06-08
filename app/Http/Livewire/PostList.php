@@ -10,11 +10,28 @@ class PostList extends Component
 {
     use WithPagination;
 
+    public $title;
+    public $body;
+    public $word;
+
     protected $queryString = [
         'word' => ['except' => ''],
     ];
 
-    public $word;
+    protected $rules = [
+        'title' => ['required'],
+        'body' => ['required'],
+    ];
+
+    public function register()
+    {
+        $data = $this->validate();
+
+        Post::query()
+            ->create($data);
+
+        $this->reset();
+    }
 
     public function updatingWord()
     {
@@ -24,6 +41,7 @@ class PostList extends Component
     public function render()
     {
         $posts = Post::query()
+            ->latest()
             ->when($this->word, fn ($query, $value) => $query->where('title', 'LIKE', '%' . $value . '%'))
             ->paginate(10);
 
