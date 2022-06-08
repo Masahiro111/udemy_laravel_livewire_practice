@@ -8,10 +8,11 @@ use Livewire\Component;
 class PostList extends Component
 {
     public $posts;
+    // public $word;
 
     public function mount()
     {
-        $this->posts = Post::all();
+        // $this->posts = Post::all();
     }
 
     public function render()
