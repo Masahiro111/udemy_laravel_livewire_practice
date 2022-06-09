@@ -7,14 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>タイトル</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        @livewireStyles()
+        @livewireStyles
     </head>
 
     <body>
 
         {{ $slot }}
 
-        @livewireScripts()
+        @livewireScripts
     </body>
 
 </html>

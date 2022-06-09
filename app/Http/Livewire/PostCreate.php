@@ -31,6 +31,8 @@ class PostCreate extends Component
 
         $this->post->save();
 
+        $this->emit('created-post');
+
         $this->post = new Post;
     }
 
