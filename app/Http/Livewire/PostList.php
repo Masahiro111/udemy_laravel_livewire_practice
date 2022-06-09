@@ -19,7 +19,7 @@ class PostList extends Component
     ];
 
     protected $rules = [
-        'title' => ['required'],
+        'title' => ['required', 'max:8'],
         'body' => ['required'],
     ];
 
@@ -36,6 +36,11 @@ class PostList extends Component
     public function updatingWord()
     {
         $this->resetPage();
+    }
+
+    public function updated($key)
+    {
+        $this->validateOnly($key);
     }
 
     public function render()
