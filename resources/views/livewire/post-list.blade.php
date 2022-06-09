@@ -6,7 +6,7 @@
 
     <form wire:submit.prevent="register" class="my-5 bg-blue-100">
         <div>
-            タイトル：<input type="text" wire:model.lazy="title">
+            タイトル：<input type="text" wire:model.lazy="post.title">
             <div>
                 @error('title')
                 <span style="color: red">{{ $message }}</span>
@@ -15,7 +15,7 @@
         </div>
 
         <div>
-            本文：<textarea wire:model.lazy="body" cols="30" rows="5"></textarea>
+            本文：<textarea wire:model.lazy="post.body" cols="30" rows="5"></textarea>
             <div>
                 @error('body')
                 <span style="color: red">{{ $message }}</span>

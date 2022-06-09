@@ -10,27 +10,43 @@ class PostList extends Component
 {
     use WithPagination;
 
-    public $title;
-    public $body;
+    // public $title;
+    // public $body;
+    // public $post = [];
+
     public $word;
+    public Post $post;
+
 
     protected $queryString = [
         'word' => ['except' => ''],
     ];
 
     protected $rules = [
-        'title' => ['required', 'max:8'],
-        'body' => ['required'],
+        'post.title' => ['required', 'max:8'],
+        'post.body' => ['required'],
     ];
+
+    public function mount()
+    {
+        $this->post = new Post;
+    }
 
     public function register()
     {
-        $data = $this->validate();
+        $this->validate();
 
-        Post::query()
-            ->create($data);
+        $this->post->save();
 
-        $this->reset();
+        $this->post = new Post;
+
+
+        // $this->post->title = '';
+        // $this->post->title = '';
+        // Post::query()
+        //     ->create($data['post']);
+
+        // $this->reset('post');
     }
 
     public function updatingWord()
