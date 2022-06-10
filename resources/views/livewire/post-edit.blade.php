@@ -1,5 +1,11 @@
-<div x-data="{open: true}">
-    <form wire:submit.prevent="register" class="my-5 bg-red-50">
+<div x-data="{open: @entangle('showModal').defer}">
+
+    <input type="button" value="表示を切り替える" x-on:click="open = !open">
+
+    <form
+          x-show="open"
+          wire:submit.prevent="register"
+          class="my-5 bg-red-50">
         <div>
             タイトル：<input type="text" wire:model.lazy="post.title">
             <div>
