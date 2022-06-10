@@ -4,15 +4,21 @@
         検索用語：<input type="text" wire:model="word">
     </form>
 
-    <livewire:post-create />
+    @livewire('post-create')
 
-    <ul>
+    <hr>
+
+    @livewire('post-edit')
+
+    <table>
         @foreach ($posts as $post)
-        <li wire:key="post-{{ $post->id }}">
-            {{ $post->title }}
-        </li>
+        <tr wire:key="post-{{ $post->id }}">
+            <td>{{ $post->id }}</td>
+            <td>{{ $post->title }}</td>
+            <td>変更する</td>
+        </tr>
         @endforeach
-    </ul>
+    </table>
 
     <div>
         {{ $posts->links() }}
