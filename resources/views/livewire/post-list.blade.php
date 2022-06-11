@@ -11,7 +11,7 @@
     @livewire('post-edit')
 
     <div style="height: 30px;">
-        @if ($this->updatedPost)
+        @if (session('updatedPost'))
         {{-- 毎回、別の div と認識させるためにランダムな wire:key を 発行。よって、JavaScript が実行される。 --}}
 
         <div wire:key="{{ Str::randam() }}"
