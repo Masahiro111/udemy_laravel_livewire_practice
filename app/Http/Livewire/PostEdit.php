@@ -30,6 +30,8 @@ class PostEdit extends Component
 
         $this->post->save();
 
+        $this->emit('updated-post');
+
         $this->showModal = false;
     }
 
