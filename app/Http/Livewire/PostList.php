@@ -20,6 +20,7 @@ class PostList extends Component
     protected $listeners = [
         'created-post' => '$refresh',
         'updated-post' => 'updatedPost',
+        'deleted-post' => 'deletedPost',
     ];
 
     public function updatingWord()
@@ -31,6 +32,11 @@ class PostList extends Component
     {
         // $this->updatedPost = true;
         session()->flash('updatedPost', true);
+    }
+
+    public function deletedPost(Post $post)
+    {
+        $post->delete();
     }
 
     public function render()
