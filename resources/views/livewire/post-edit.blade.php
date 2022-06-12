@@ -18,6 +18,16 @@
                     @enderror
                 </div>
             </div>
+
+            <div>
+                写真：<input type="file" wire:model.lazy="photo">
+                <div>
+                    @error('photo')
+                    <span style="color: red;">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
             <div>
                 <input type="submit" value="変更する">
             </div>

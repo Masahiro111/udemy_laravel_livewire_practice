@@ -35,7 +35,14 @@
         @foreach ($posts as $post)
         <tr wire:key="post-{{ $post->id }}">
             <td>{{ $post->id }}</td>
-            <td>{{ $post->title }}</td>
+            <td>
+                {{ $post->title }}
+                <span>
+                    @if ($post->photo)
+                    <img src="{{ storage::url($post->post) }}" width="50" height="50" alt="">
+                    @endif
+                </span>
+            </td>
             <td wire:click="$emitTo('post-edit', 'showModal', {{ $post->id }})">変更する</td>
             <td onclick="
                 confirm('削除してもよろしいですか？') && 
