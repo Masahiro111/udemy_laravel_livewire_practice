@@ -27,4 +27,5 @@ Route::get('counter', function () {
 Route::get('posts', PostList::class);
 Route::get('diffing', Digging::class);
 
-Route::get('topics', TopicList::class);
+Route::get('topics', TopicList::class)->name('topic.list');
+Route::get('topics/edit/{topic}', TopicEdit::class)->name('topic.edit');
