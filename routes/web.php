@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\Digging;
 use App\Http\Livewire\PostList;
+use App\Http\Livewire\TopicList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +25,6 @@ Route::get('counter', function () {
 });
 
 Route::get('posts', PostList::class);
-Route::get('diffing', Diffing::class);
+Route::get('diffing', Digging::class);
+
+Route::get('topics', TopicList::class);
