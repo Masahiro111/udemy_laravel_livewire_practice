@@ -50,6 +50,8 @@ class PostEdit extends Component
         $this->photo = null;
 
         $this->showModal = true;
+
+        $this->dispatchBrowserEvent('show-modal');
     }
 
     public function render()
