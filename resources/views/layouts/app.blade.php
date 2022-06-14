@@ -16,6 +16,8 @@
         {{ $slot }}
 
         @livewireScripts
+
+        @stack('js')
     </body>
 
 </html>
